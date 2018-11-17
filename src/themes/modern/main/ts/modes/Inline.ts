@@ -30,7 +30,7 @@ const render = function (editor, theme, args) {
 
   const fixedToolbarContainer = Settings.getFixedToolbarContainer(editor);
   if (fixedToolbarContainer) {
-    inlineToolbarContainer = DOM.select(fixedToolbarContainer)[0];
+    inlineToolbarContainer = typeof fixedToolbarContainer === 'string' ? DOM.select(fixedToolbarContainer)[0] : fixedToolbarContainer;
   }
 
   const reposition = function () {

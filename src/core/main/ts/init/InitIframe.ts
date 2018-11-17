@@ -130,7 +130,9 @@ const init = function (editor, boxInfo) {
   DOM.setAttrib(editor.id, 'aria-hidden', 'true');
 
   if (!isDomainRelaxed) {
-    InitContentBody.initContentBody(editor);
+    setTimeout(function() {
+      InitContentBody.initContentBody(editor);
+    }, 0);
   }
 };
 
